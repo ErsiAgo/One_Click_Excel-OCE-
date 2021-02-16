@@ -27,7 +27,7 @@ for filename in glob.glob(os.path.join(folder_path, '*.xlsx')):
         timeseries.append(row)
 
 X = np.array(timeseries)
-print(X)
+#print(X)
 print(X.shape)
 
 lv = []
@@ -39,14 +39,17 @@ Y = []
 for row in range(X.shape[0]):
     parametrized_row = X[row]-lv[row]
     new_row =np.array(parametrized_row)
-    print(parametrized_row)
+    #print(parametrized_row)
     #print(row)
     Y.append(new_row)
 
-print(Y)
-plt.plot(Y)
-plt.show()
+Yfinal = np.array(Y)
+print(Yfinal)
 
+for l in range(Yfinal.shape[0]):
+    plt.plot(Yfinal[l])
+    plt.show()
+    print(l)
 
 
 
